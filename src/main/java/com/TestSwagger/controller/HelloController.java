@@ -19,7 +19,7 @@ import io.swagger.annotations.ApiResponses;
 @Api(tags="TestSwagger")
 public class HelloController {
 
-	@ApiOperation(value ="Say Hello by Swagger", response = String.class)
+	@ApiOperation(value ="", response = String.class)
 	@ApiResponses({
 		@ApiResponse(code = 200, message = "Successfully say Hello"),
 		@ApiResponse(code = 401, message = "You are not authorized to get Hello"),
@@ -32,7 +32,7 @@ public class HelloController {
 	}
 	
 	
-	@ApiOperation(tags = "custom",value ="Say Hello By Swagger ID ", response = String.class)
+	@ApiOperation(tags = "custom",value ="", response = String.class)
 	@ApiResponses({
 		@ApiResponse(code = 200, message = "Successfully say hello by id"),
 		@ApiResponse(code = 401, message = "Yout are not authorized to get Hello By Id"),

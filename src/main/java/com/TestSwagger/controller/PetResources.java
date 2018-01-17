@@ -30,7 +30,7 @@ public class PetResources extends AbstractResource{
 
 	private static PetData data = new PetData();
 	
-	@ApiOperation(notes = "Returns a pet when 0 < ID <= 10. ID > 10 or non-integers will simulate API error conditions", value ="Find pet by ID", nickname = "getPetById",
+	@ApiOperation(notes = "Returns a pet when 0 < ID <= 10. ID > 10 or non-integers will simulate API error conditions", value ="", nickname = "getPetById",
 			tags = {"Pets"})
 	@ApiResponses({
 		@ApiResponse(code = 200, message = "Nice!", response = Pet.class),
