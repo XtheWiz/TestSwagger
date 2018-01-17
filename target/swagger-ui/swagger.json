@@ -31,7 +31,7 @@
     "/api/TestSwagger" : {
       "get" : {
         "tags" : [ "TestSwagger" ],
-        "summary" : "Say Hello by Swagger",
+        "summary" : "",
         "description" : "",
         "operationId" : "getHello",
         "consumes" : [ "application/json" ],
@@ -52,11 +52,14 @@
           "404" : {
             "description" : "The resource you were trying to reach is not found"
           }
-        }
+        },
+        "security" : [ {
+          "authGetHello" : [ "write:custom", "read:custom" ]
+        } ]
       },
       "post" : {
         "tags" : [ "custom" ],
-        "summary" : "Post Hello to Swagger ",
+        "summary" : "",
         "description" : "",
         "operationId" : "postHello",
         "consumes" : [ "application/json" ],
@@ -87,12 +90,81 @@
             "description" : "The resource you were trying to reach is not found"
           }
         }
+      },
+      "put" : {
+        "tags" : [ "custom" ],
+        "summary" : "",
+        "description" : "",
+        "operationId" : "putHello",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "text/plain" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "description" : "msg",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successfully put hello to swagger",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "401" : {
+            "description" : "Yout are not authorized to get put hello to swagger"
+          },
+          "403" : {
+            "description" : "Accessing the resource you were trying to reach is forbidden"
+          },
+          "404" : {
+            "description" : "The resource you were trying to reach is not found"
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "custom" ],
+        "summary" : "",
+        "description" : "",
+        "operationId" : "deleteHello",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "text/plain" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "description" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successfully delete hello to swagger",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "401" : {
+            "description" : "Yout are not authorized to get delete hello to swagger"
+          },
+          "403" : {
+            "description" : "Accessing the resource you were trying to reach is forbidden"
+          },
+          "404" : {
+            "description" : "The resource you were trying to reach is not found"
+          }
+        }
       }
     },
     "/api/TestSwagger/{id}" : {
       "get" : {
         "tags" : [ "custom" ],
-        "summary" : "Say Hello By Swagger ID ",
+        "summary" : "",
         "description" : "",
         "operationId" : "getHelloById",
         "consumes" : [ "application/json" ],
@@ -127,7 +199,7 @@
     "/pets/{id}" : {
       "get" : {
         "tags" : [ "Pets" ],
-        "summary" : "Find pet by ID",
+        "summary" : "",
         "description" : "Returns a pet when 0 < ID <= 10. ID > 10 or non-integers will simulate API error conditions",
         "operationId" : "getPetById",
         "produces" : [ "application/json" ],

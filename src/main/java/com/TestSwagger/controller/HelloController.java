@@ -13,13 +13,20 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import io.swagger.annotations.Authorization;
+import io.swagger.annotations.AuthorizationScope;
 
 @RestController
 @RequestMapping("/api/TestSwagger")
 @Api(tags="TestSwagger")
 public class HelloController {
 
-	@ApiOperation(value ="", response = String.class)
+	@ApiOperation(value ="", response = String.class, authorizations= {
+			@Authorization(value="authGetHello", scopes = {
+					@AuthorizationScope(scope="write:custom", description="modify custom api"),
+					@AuthorizationScope(scope="read:custom", description="read custom api")
+			})
+	})
 	@ApiResponses({
 		@ApiResponse(code = 200, message = "Successfully say Hello"),
 		@ApiResponse(code = 401, message = "You are not authorized to get Hello"),

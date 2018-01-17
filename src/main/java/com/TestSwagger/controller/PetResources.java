@@ -18,9 +18,9 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.Authorization;
 import io.swagger.annotations.AuthorizationScope;
 
-@Api(value = "/pet", authorizations = {
+@Api(value = "/pet",  authorizations = {
 		@Authorization(value ="petstore_auth",
-			scopes = {
+			scopes = {  
 					@AuthorizationScope(scope = "write:pets", description ="modify pets in your account"),
 					@AuthorizationScope(scope = "read:pets", description ="read your pets")
 			})
