@@ -45,7 +45,7 @@ public class HelloController {
 	}
 	
 	
-	@ApiOperation(tags = "custom",value ="Post Hello to Swagger ", response = String.class)
+	@ApiOperation(tags = "custom",value ="", response = String.class)
 	@ApiResponses({
 		@ApiResponse(code = 200, message = "Successfully post hello to swagger"),
 		@ApiResponse(code = 401, message = "Yout are not authorized to get post hello to swagger"),
@@ -57,7 +57,7 @@ public class HelloController {
 		return "Swagger says "+msg;
 	}
 	
-	@ApiOperation(tags = "custom",value ="Delete Hello to Swagger ", response = String.class)
+	@ApiOperation(tags = "custom",value ="", response = String.class)
 	@ApiResponses({
 		@ApiResponse(code = 200, message = "Successfully delete hello to swagger"),
 		@ApiResponse(code = 401, message = "Yout are not authorized to get delete hello to swagger"),
