@@ -68,4 +68,16 @@ public class HelloController {
 	public String deleteHello(@ApiParam(value="id", required=true) @RequestBody int id) {
 		return "Delete Hello id: "+String.valueOf(id);
 	}
+	
+	@ApiOperation(tags = "custom",value ="Put Hello to Swagger ", response = String.class)
+	@ApiResponses({
+		@ApiResponse(code = 200, message = "Successfully put hello to swagger"),
+		@ApiResponse(code = 401, message = "Yout are not authorized to get put hello to swagger"),
+		@ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
+		@ApiResponse(code = 404, message = "The resource you were trying to reach is not found")
+	})
+	@RequestMapping(method = RequestMethod.PUT, produces = "text/plain", consumes ="application/json")
+	public String putHello(@ApiParam(value="msg", required=true) @RequestBody String msg) {
+		return "Put Hello id: "+msg;
+	}
 }
