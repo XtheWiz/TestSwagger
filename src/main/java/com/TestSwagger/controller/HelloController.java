@@ -66,6 +66,6 @@ public class HelloController {
 	})
 	@RequestMapping(method = RequestMethod.DELETE, produces = "text/plain", consumes ="application/json")
 	public String deleteHello(@ApiParam(value="id", required=true) @RequestBody int id) {
-		return "Delete Hello id : "+String.valueOf(id);
+		return "Delete Hello id: "+String.valueOf(id);
 	}
 }
