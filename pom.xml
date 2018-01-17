@@ -97,8 +97,10 @@
                                     <name>Apache 2.0</name>
                                 </license>
                             </info>
-                             <outputPath>${basedir}/generated/document.html</outputPath>
-						<swaggerDirectory>${project.build.directory}/swagger-ui</swaggerDirectory>
+                            <outputTemplate>templates/strapdown.html.mustache</outputTemplate>
+                        	<mustacheFileRoot>${basedir}/templates/</mustacheFileRoot>
+                           	<outputPath>${project.build.directory}/swagger-ui.html</outputPath>
+							<swaggerDirectory>${project.build.directory}/swagger-ui</swaggerDirectory>
 					</apiSource>
 				</apiSources>
 			</configuration>
