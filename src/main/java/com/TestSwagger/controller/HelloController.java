@@ -17,7 +17,7 @@ import io.swagger.annotations.Authorization;
 import io.swagger.annotations.AuthorizationScope;
 
 @RestController
-@RequestMapping("/api/TestSwagger")
+@RequestMapping("/scb-ent/api/v1/TestSwagger")
 @Api(tags="TestSwagger")
 public class HelloController {
 
